@@ -25,7 +25,7 @@
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">Introduzca sus datos de ingreso</p>
+            <p class="login-box-msg">Introduzca usuario y contraseña</p>
             <?php if($this->session->flashdata("error")):?>
               <div class="alert alert-danger">
                 <p><?php echo $this->session->flashdata("error")?></p>
