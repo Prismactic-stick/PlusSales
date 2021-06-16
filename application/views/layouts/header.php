@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sistema de Ventas | Dashboard</title>
+    <title>Sistema de Ventas | Plus sale</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -23,11 +23,11 @@
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
-            <a href="../../index2.html" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>S</b>V</span>
+            <a href="#" class="logo">
+                <span class="logo-mini"><b></b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>SISVEN</b></span>
+<img src="<?php echo base_url()?>assets/template/dist/img/logo.png" align="left" width="50" height="50" class="user-image" alt="User Image">
+                <span class="logo-lg"><b><big>Plus sale</big></b></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -43,15 +43,22 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo base_url()?>assets/template/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <img src="<?php echo base_url()?>assets/template/dist/img/perfil.jpg" class="user-image" alt="User Image">
                                 <span class="hidden-xs"><?php echo $this->session->userdata("nombre")?></span>
+                                 <span class="hidden-xs"><?php echo $this->session->userdata("apellidos")?></span>
+
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="user-body">
                                     <div class="row">
                                         <div class="col-xs-12 text-center">
-                                            <a href="<?php echo base_url(); ?>auth/logout"> Cerrar Sesión</a>
-                                        </div>
+
+                                            <body><a href="<?php echo base_url(); ?>auth/logout"><big><p style="color:red;"><span class="fa fa-sign-out"></span>  Cerrar Sesion</p></big></a></body>
+           
+
+
+  
+                             </div>
                                     </div>
                                     <!-- /.row -->
                                 </li>

@@ -25,11 +25,11 @@
                         <form action="<?php echo base_url();?>mantenimiento/categorias/store" method="POST">
                             <div class="form-group">
                                 <label for="nombre">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                <input type="text" class="form-control" id="nombre" name="nombre" minlength="5" maxlength="20" required>
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Descripcion:</label>
-                                <input type="text" class="form-control" id="descripcion" name="descripcion">
+                                <input type="text" class="form-control" id="descripcion" name="descripcion"minlength="5" maxlength="25" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-flat">Guardar</button>

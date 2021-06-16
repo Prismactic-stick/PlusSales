@@ -47,12 +47,40 @@
                                             <td><?php echo $cliente->empresa;?></td>
                                             <?php $datacliente = $cliente->id."*".$cliente->nombres."*".$cliente->apellidos."*".$cliente->telefono."*".$cliente->direccion."*".$cliente->ruc."*".$cliente->empresa;?>
                                             <td>
+
+                                              
+                                                
+
+                                                  <!-- ICONO VER -->
+                                                  <button style="margin-left: 10px" type="button" class="btn btn-success btn-view-cliente" data-toggle="modal" data-target="#modal-default" value="<?php echo $datacliente;?>">
+                                                  <span class="fa fa-eye">  Ver</span></button>
+                                                    
+                   
+                                                    
+                                             
+                                                    <!-- ICONO EDITAR   --> 
+                                                    <a href="<?php echo base_url()?>mantenimiento/clientes/edit/<?php echo $cliente->id;?>" class="btn btn-primary">
+                                                        <span class="fa fa-pencil"></span>  Editar</a>
+                                                         
+                                                    <!-- ICONO ELIMINAR -->
+                                                    <a href="<?php echo base_url();?>mantenimiento/clientes/delete/<?php echo $cliente->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span>  Eliminar</a>
+                                                    </td>
+                                                <!--
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-info btn-view-cliente" data-toggle="modal" data-target="#modal-default" value="<?php echo $datacliente?>">
                                                         <span class="fa fa-search"></span>
                                                     </button>
-                                                    <a href="<?php echo base_url()?>mantenimiento/clientes/edit/<?php echo $cliente->id;?>" class="btn btn-warning"><span class="fa fa-pencil"></span></a>
-                                                    <a href="<?php echo base_url();?>mantenimiento/clientes/delete/<?php echo $cliente->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span></a>
+
+
+                                                      
+                                                    <a href="<?php echo base_url()?>mantenimiento/categorias/edit/<?php echo $cliente->id;?>" class="btn btn-primary">
+                                                        <span class="fa fa-pencil"></span>  Editar</a>
+
+                                                         
+                                                    
+                                                    <a href="<?php echo base_url();?>mantenimiento/categorias/delete/<?php echo $cliente->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span>  Eliminar</a>
+                                                    -->
+
                                                 </div>
                                             </td>
                                         </tr>

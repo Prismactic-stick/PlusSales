@@ -30,8 +30,9 @@ class Categorias extends CI_Controller {
 	}
 
 	public function store(){
+		
 		$nombre = $this->input->post("nombre");
-		$descripcion = $this->input->post("descripcion");
+		$descripcion = $this->input->post("descripcion");		
 
 		$data  = array(
 			'nombre' => $nombre, 

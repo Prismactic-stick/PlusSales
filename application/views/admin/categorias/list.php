@@ -1,6 +1,7 @@
 
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -15,7 +16,7 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="<?php echo base_url();?>mantenimiento/categorias/add" class="btn btn-primary btn-flat"><span class="fa fa-plus"></span> Agregar Categoria</a>
+                        <a href="<?php echo base_url();?>mantenimiento/categorias/add" class="btn btn-primary btn-flat"><span class="fa fa-plus"></span>   Agregar Categoria</a>
                     </div>
                 </div>
                 <hr>
@@ -34,16 +35,28 @@
                                 <?php if(!empty($categorias)):?>
                                     <?php foreach($categorias as $categoria):?>
                                         <tr>
+                                            
                                             <td><?php echo $categoria->id;?></td>
                                             <td><?php echo $categoria->nombre;?></td>
                                             <td><?php echo $categoria->descripcion;?></td>
+
                                             <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-view" data-toggle="modal" data-target="#modal-default" value="<?php echo $categoria->id;?>">
-                                                        <span class="fa fa-search"></span>
-                                                    </button>
-                                                    <a href="<?php echo base_url()?>mantenimiento/categorias/edit/<?php echo $categoria->id;?>" class="btn btn-warning"><span class="fa fa-pencil"></span></a>
-                                                    <a href="<?php echo base_url();?>mantenimiento/categorias/delete/<?php echo $categoria->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span></a>
+                                                
+
+                                                  <!-- ICONO VER -->
+                                                  <button style="margin-left: 10px" type="button" class="btn btn-success btn-view" data-toggle="modal" data-target="#modal-default" value="<?php echo $categoria->id;?>">
+                                                  <span class="fa fa-eye">  Ver</span></button>
+                                                    
+                   
+                                                    
+                                             
+                                                    <!-- ICONO EDITAR   --> 
+                                                    <a href="<?php echo base_url()?>mantenimiento/categorias/edit/<?php echo $categoria->id;?>" class="btn btn-primary">
+                                                        <span class="fa fa-pencil"></span>  Editar</a>
+                                                         
+                                                    <!-- ICONO ELIMINAR -->
+                                                    <a href="<?php echo base_url();?>mantenimiento/categorias/delete/<?php echo $categoria->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span>  Eliminar</a>
+                                                    </td>
                                                 </div>
                                             </td>
                                         </tr>

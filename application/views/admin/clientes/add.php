@@ -25,27 +25,27 @@
                         <form action="<?php echo base_url();?>mantenimiento/clientes/store" method="POST">
                             <div class="form-group">
                                 <label for="nombres">Nombres:</label>
-                                <input type="text" class="form-control" id="nombres" name="nombres">
+                                <input type="text" class="form-control" id="nombres" name="nombres" minlength="5" maxlength="10" required>
                             </div>
                             <div class="form-group">
                                 <label for="apellidos">Apellidos:</label>
-                                <input type="text" class="form-control" id="apellidos" name="apellidos">
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" minlength="5" maxlength="10" required>
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Telefono:</label>
-                                <input type="text" class="form-control" id="telefono" name="telefono">
+                                <input type="text" class="form-control" id="telefono" name="telefono" minlength="10" maxlength="10" required>
                             </div>
                             <div class="form-group">
                                 <label for="direccion">Direccion:</label>
-                                <input type="text" class="form-control" id="direccion" name="direccion">
+                                <input type="text" class="form-control" id="direccion" name="direccion" minlength="5" maxlength="25" required>
                             </div>
                             <div class="form-group">
                                 <label for="ruc">RUC:</label>
-                                <input type="text" class="form-control" id="ruc" name="ruc">
+                                <input type="text" class="form-control" id="ruc" name="ruc"minlength="5" maxlength="10" required>
                             </div>
                             <div class="form-group">
                                 <label for="empresa">Empresa:</label>
-                                <input type="text" class="form-control" id="empresa" name="empresa">
+                                <input type="text" class="form-control" id="empresa" name="empresa"minlength="5" maxlength="25" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-flat">Guardar</button>

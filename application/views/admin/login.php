@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>Login | Plus sale</title>
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
@@ -18,14 +19,16 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/template/dist/css/AdminLTE.min.css">
 
 </head>
+
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <h2>SISTEMA DE VENTAS PLUS SALES</h2>
-        </div>
-        <!-- /.login-logo -->
+          </div>
+            <center><h2>PLUS SALES</h2>
+              <img src="<?php echo base_url()?>assets/template/dist/img/logo.png" width="165" height="165" class="user-image" alt="User Image"></center>     
+        
         <div class="login-box-body">
-            <p class="login-box-msg">Introduzca sus datos de ingreso</p>
+            <p class="login-box-msg"><big>Introduzca sus datos de ingreso</big></p>
             <?php if($this->session->flashdata("error")):?>
               <div class="alert alert-danger">
                 <p><?php echo $this->session->flashdata("error")?></p>
@@ -42,7 +45,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat"><big>Entrar</big></button>
                     </div>
                     <!-- /.col -->
                 </div>
