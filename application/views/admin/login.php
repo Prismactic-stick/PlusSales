@@ -28,7 +28,11 @@
               <img src="<?php echo base_url()?>assets/template/dist/img/logo.png" width="165" height="165" class="user-image" alt="User Image"></center>     
         
         <div class="login-box-body">
+<<<<<<< HEAD
             <p class="login-box-msg"><big>Introduzca sus datos de ingreso</big></p>
+=======
+            <p class="login-box-msg">Introduzca usuario y contraseña</p>
+>>>>>>> 3d9fdcf7737bbe9fe78dffb22dec5b162c8742e9
             <?php if($this->session->flashdata("error")):?>
               <div class="alert alert-danger">
                 <p><?php echo $this->session->flashdata("error")?></p>
