@@ -24,14 +24,44 @@
                         <?php endif;?>
                         <form action="<?php echo base_url();?>mantenimiento/clientes/update" method="POST">
                             <input type="hidden" name="idcliente" value="<?php echo $cliente->id;?>">
-                            <div class="form-group">
-                                <label for="nombres">Nombres:</label>
-                                <input type="text" class="form-control" id="nombres" name="nombres" value="<?php echo $cliente->nombres;?>">
+                           
+                            <div class="form-group <?php echo !empty(form_error('nombres')) ? 'has-error':''?>">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $cliente->nombre;?>">
+                                <?php echo form_error("nombre","<span class='help-block'>","</span>");?>
                             </div>
                             <div class="form-group">
-                                <label for="apellidos">Apellidos:</label>
-                                <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $cliente->apellidos;?>">
+                                <label for="tipocliente">Tipo de Cliente</label>
+                                <select name="tipocliente" id="tipocliente" class="form-control" required="required">
+                                    <option value="">Seleccione...</option>
+                                    <?php foreach ($tipoclientes as $tipocliente) :?>
+                                       <?php if($tipocliente->id == $cliente->tipo_cliente_id):?>
+                                            <option value="<?php echo $tipocliente->id;?>" selected><?php echo $tipocliente->nombre ?></option>
+                                        <?php else:?>
+                                            <option value="<?php echo $tipocliente->id;?>"><?php echo $tipocliente->nombre ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach;?>
+                                </select>
                             </div>
+                            <div class="form-group">
+                                <label for="tipodocumento">Tipo de Documento</label>
+                                <select name="tipodocumento" id="tipodocumento" class="form-control" required="required">
+                                    <option value="">Seleccione...</option>
+                                    <?php foreach ($tipodocumentos as $tipodocumento) :?>
+                                        <?php if($tipodocumento->id == $cliente->tipo_documento_id):?>
+                                            <option value="<?php echo $tipodocumento->id;?>" selected><?php echo $tipodocumento->nombre ?></option>
+                                        <?php else:?>
+                                            <option value="<?php echo $tipodocumento->id;?>"><?php echo $tipodocumento->nombre ?></option>
+                                        <?php endif; ?>
+                                        
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="numero">Numero del Documento:</label>
+                                <input type="text" class="form-control" id="numero" name="numero" value="<?php echo $cliente->num_documento;?>">
+                            </div>
+                            
                             <div class="form-group">
                                 <label for="telefono">Telefono:</label>
                                 <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $cliente->telefono;?>">
@@ -40,14 +70,7 @@
                                 <label for="direccion">Direccion:</label>
                                 <input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo $cliente->direccion;?>">
                             </div>
-                            <div class="form-group">
-                                <label for="ruc">RUC:</label>
-                                <input type="text" class="form-control" id="ruc" name="ruc" value="<?php echo $cliente->ruc;?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="empresa">Empresa:</label>
-                                <input type="text" class="form-control" id="empresa" name="empresa" value="<?php echo $cliente->empresa;?>">
-                            </div>
+                            
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-flat">Guardar</button>
                             </div>

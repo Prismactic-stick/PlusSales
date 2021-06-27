@@ -23,13 +23,16 @@
                              </div>
                         <?php endif;?>
                         <form action="<?php echo base_url();?>mantenimiento/categorias/store" method="POST">
-                            <div class="form-group">
+                            <div class="form-group <?php echo form_error('nombre') == true ? 'has-error':''?>">
                                 <label for="nombre">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" minlength="5" maxlength="20" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                <?php echo form_error("nombre","<span class='help-block'>","</span>");?>
                             </div>
-                            <div class="form-group">
+                       <div class="form-group <?php echo !empty(form_error("descripcion"))?'has-error':'';?>">
+                            
                                 <label for="descripcion">Descripcion:</label>
-                                <input type="text" class="form-control" id="descripcion" name="descripcion"minlength="5" maxlength="25" required>
+                                <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo set_value("descripcion");?>">
+                                 <?php echo form_error("descripcion","<span class='help-block'>","</span>");?>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-flat">Guardar</button>

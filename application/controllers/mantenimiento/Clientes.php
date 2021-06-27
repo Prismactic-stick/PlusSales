@@ -19,30 +19,34 @@ class Clientes extends CI_Controller {
 		$this->load->view("layouts/footer");
 
 	}
-
 	public function add(){
+
+		$data = array(
+			"tipoclientes" => $this->Clientes_model->getTipoClientes(),
+			"tipodocumentos" => $this->Clientes_model->getTipoDocumentos()
+		);
 
 		$this->load->view("layouts/header");
 		$this->load->view("layouts/aside");
-		$this->load->view("admin/clientes/add");
+		$this->load->view("admin/clientes/add",$data);
 		$this->load->view("layouts/footer");
 	}
-
 	public function store(){
-		$nombres = $this->input->post("nombres");
-		$apellidos = $this->input->post("apellidos");
-		$telefono = $this->input->post("telefono");
+
+		$nombre = $this->input->post("nombre");
+		$tipodocumento = $this->input->post("tipodocumento");
+		$tipocliente = $this->input->post("tipocliente");
 		$direccion = $this->input->post("direccion");
-		$ruc = $this->input->post("ruc");
-		$empresa = $this->input->post("empresa");
+		$telefono = $this->input->post("telefono");
+		$num_documento = $this->input->post("numero");
 
 		$data  = array(
-			'nombres' => $nombres, 
-			'apellidos' => $apellidos,
-			'telefono' => $telefono,
+			'nombre' => $nombre, 
+			'tipo_documento_id' => $tipodocumento,
+			'tipo_cliente_id' => $tipocliente,
 			'direccion' => $direccion,
-			'ruc' => $ruc,
-			'empresa' => $empresa,
+			'telefono' => $telefono,
+			'num_documento' => $num_documento,
 			'estado' => "1"
 		);
 
@@ -54,10 +58,11 @@ class Clientes extends CI_Controller {
 			redirect(base_url()."mantenimiento/clientes/add");
 		}
 	}
-
 	public function edit($id){
 		$data  = array(
 			'cliente' => $this->Clientes_model->getCliente($id), 
+			"tipoclientes" => $this->Clientes_model->getTipoClientes(),
+			"tipodocumentos" => $this->Clientes_model->getTipoDocumentos()
 		);
 		$this->load->view("layouts/header");
 		$this->load->view("layouts/aside");
@@ -65,22 +70,24 @@ class Clientes extends CI_Controller {
 		$this->load->view("layouts/footer");
 	}
 
+
 	public function update(){
 		$idcliente = $this->input->post("idcliente");
-		$nombres = $this->input->post("nombres");
-		$apellidos = $this->input->post("apellidos");
-		$telefono = $this->input->post("telefono");
+		$nombre = $this->input->post("nombre");
+		$tipodocumento = $this->input->post("tipodocumento");
+		$tipocliente = $this->input->post("tipocliente");
 		$direccion = $this->input->post("direccion");
-		$ruc = $this->input->post("ruc");
-		$empresa = $this->input->post("empresa");
+		$telefono = $this->input->post("telefono");
+		$num_documento = $this->input->post("numero");
+
 
 		$data = array(
-			'nombres' => $nombres, 
-			'apellidos' => $apellidos,
-			'telefono' => $telefono,
+			'nombre' => $nombre, 
+			'tipo_documento_id' => $tipodocumento,
+			'tipo_cliente_id' => $tipocliente,
 			'direccion' => $direccion,
-			'ruc' => $ruc,
-			'empresa' => $empresa,
+			'telefono' => $telefono,
+			'num_documento' => $num_documento,
 		);
 
 		if ($this->Clientes_model->update($idcliente,$data)) {
@@ -90,6 +97,7 @@ class Clientes extends CI_Controller {
 			$this->session->set_flashdata("error","No se pudo actualizar la informacion");
 			redirect(base_url()."mantenimiento/clientes/edit/".$idcliente);
 		}
+
 	}
 
 	public function delete($id){

@@ -47,12 +47,20 @@
                                             <td><?php echo $producto->categoria;?></td>
                                             <?php $dataproducto = $producto->id."*".$producto->codigo."*".$producto->nombre."*".$producto->descripcion."*".$producto->precio."*".$producto->stock."*".$producto->categoria;?>
                                             <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-view-producto" data-toggle="modal" data-target="#modal-default" value="<?php echo $dataproducto;?>">
-                                                        <span class="fa fa-search"></span>
-                                                    </button>
-                                                    <a href="<?php echo base_url()?>mantenimiento/productos/edit/<?php echo $producto->id;?>" class="btn btn-warning"><span class="fa fa-pencil"></span></a>
-                                                    <a href="<?php echo base_url();?>mantenimiento/productos/delete/<?php echo $producto->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span></a>
+                                               <button type="button" class="btn btn-success btn-view-producto" data-toggle="modal" data-target="#modal-default" 
+                                               value="<?php echo $dataproducto?>">
+                                               <span class="fa fa-eye"><big>Ver</big></span></button>
+                                                
+                                                <!-- ICONO EDITAR   --> 
+                                                <a href="<?php echo base_url()?>mantenimiento/productos/edit/<?php echo $producto->id;?>" class="btn btn-primary">
+                                                    <span class="fa fa-pencil"></span>  Editar</a>
+                                                     
+                                                <!-- ICONO ELIMINAR -->
+                                                <a href="<?php echo base_url();?>mantenimiento/productos/delete/<?php echo $producto->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span>  Eliminar</a>
+
+
+
+
                                                 </div>
                                             </td>
                                         </tr>

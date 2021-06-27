@@ -25,12 +25,13 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nombres</th>
-                                    <th>Apellidos</th>
+                                    <th>Nombre</th>
+                                    <th>Tipo de Cliente</th>
+                                    <th>Tipo de Documento</th>
+                                    <th>No de Documento</th>
                                     <th>Telefono</th>
                                     <th>Direccion</th>
-                                    <th>RUC</th>
-                                    <th>Empresa</th>
+                                 
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -39,48 +40,39 @@
                                     <?php foreach($clientes as $cliente):?>
                                         <tr>
                                             <td><?php echo $cliente->id;?></td>
-                                            <td><?php echo $cliente->nombres;?></td>
-                                            <td><?php echo $cliente->apellidos;?></td>
+                                            <td><?php echo $cliente->nombre;?></td>
+                                            <td><?php echo $cliente->tipocliente;?></td>
+                                            <td><?php echo $cliente->tipodocumento;?></td>
+                                            <td><?php echo $cliente->num_documento;?></td>
                                             <td><?php echo $cliente->telefono;?></td>
                                             <td><?php echo $cliente->direccion;?></td>
-                                            <td><?php echo $cliente->ruc;?></td>
-                                            <td><?php echo $cliente->empresa;?></td>
-                                            <?php $datacliente = $cliente->id."*".$cliente->nombres."*".$cliente->apellidos."*".$cliente->telefono."*".$cliente->direccion."*".$cliente->ruc."*".$cliente->empresa;?>
+                                            <?php $datacliente = $cliente->id."*".$cliente->nombre."*".$cliente->tipocliente."*".$cliente->tipodocumento."*".$cliente->num_documento."*".$cliente->telefono."*".$cliente->direccion;?>
                                             <td>
-
-                                              
                                                 
 
-                                                  <!-- ICONO VER -->
-                                                  <button style="margin-left: 10px" type="button" class="btn btn-success btn-view-cliente" data-toggle="modal" data-target="#modal-default" value="<?php echo $datacliente;?>">
-                                                  <span class="fa fa-eye">  Ver</span></button>
-                                                    
-                   
-                                                    
-                                             
-                                                    <!-- ICONO EDITAR   --> 
-                                                    <a href="<?php echo base_url()?>mantenimiento/clientes/edit/<?php echo $cliente->id;?>" class="btn btn-primary">
-                                                        <span class="fa fa-pencil"></span>  Editar</a>
-                                                         
-                                                    <!-- ICONO ELIMINAR -->
-                                                    <a href="<?php echo base_url();?>mantenimiento/clientes/delete/<?php echo $cliente->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span>  Eliminar</a>
-                                                    </td>
-                                                <!--
-                                                <div class="btn-group">
+                                                 <!-- ICONO VER -->
+                                         <button type="button" class="btn btn-success btn-view-cliente" data-toggle="modal" data-target="#modal-default" 
+                                         value="<?php echo $datacliente?>">
+                                          <span class="fa fa-eye"><big>Ver</big></span></button>
+                                                
+                                                <!-- ICONO EDITAR   --> 
+                                                <a href="<?php echo base_url()?>mantenimiento/clientes/edit/<?php echo $cliente->id;?>" class="btn btn-primary">
+                                                    <span class="fa fa-pencil"></span>  Editar</a>
+                                                     
+                                                <!-- ICONO ELIMINAR -->
+                                                <a href="<?php echo base_url();?>mantenimiento/clientes/delete/<?php echo $cliente->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span>  Eliminar</a>
+
+                                                </td>
+
+                                                <!-- Main content 
+                                                
                                                     <button type="button" class="btn btn-info btn-view-cliente" data-toggle="modal" data-target="#modal-default" value="<?php echo $datacliente?>">
                                                         <span class="fa fa-search"></span>
                                                     </button>
+                                                    <a href="<?php echo base_url()?>mantenimiento/clientes/edit/<?php echo $cliente->id;?>" class="btn btn-warning"><span class="fa fa-pencil"></span></a>
 
-
-                                                      
-                                                    <a href="<?php echo base_url()?>mantenimiento/categorias/edit/<?php echo $cliente->id;?>" class="btn btn-primary">
-                                                        <span class="fa fa-pencil"></span>  Editar</a>
-
-                                                         
-                                                    
-                                                    <a href="<?php echo base_url();?>mantenimiento/categorias/delete/<?php echo $cliente->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span>  Eliminar</a>
+                                                    <a href="<?php echo base_url();?>mantenimiento/clientes/delete/<?php echo $cliente->id;?>" class="btn btn-danger btn-remove"><span class="fa fa-remove"></span></a>
                                                     -->
-
                                                 </div>
                                             </td>
                                         </tr>

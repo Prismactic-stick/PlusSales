@@ -23,30 +23,43 @@
                              </div>
                         <?php endif;?>
                         <form action="<?php echo base_url();?>mantenimiento/clientes/store" method="POST">
-                            <div class="form-group">
-                                <label for="nombres">Nombres:</label>
-                                <input type="text" class="form-control" id="nombres" name="nombres" minlength="5" maxlength="10" required>
+                            <div class="form-group <?php echo !empty(form_error('nombres')) ? 'has-error':''?>">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo set_value("nombre");?>">
+                                <?php echo form_error("nombre","<span class='help-block'>","</span>");?>
                             </div>
                             <div class="form-group">
-                                <label for="apellidos">Apellidos:</label>
-                                <input type="text" class="form-control" id="apellidos" name="apellidos" minlength="5" maxlength="10" required>
+                                <label for="tipocliente">Tipo de Cliente</label>
+                                <select name="tipocliente" id="tipocliente" class="form-control" required="required">
+                                    <option value="">Seleccione...</option>
+                                    <?php foreach ($tipoclientes as $tipocliente) :?>
+                                        <option value="<?php echo $tipocliente->id;?>"><?php echo $tipocliente->nombre ?></option>
+                                    <?php endforeach;?>
+                                </select>
                             </div>
+                            <div class="form-group">
+                                <label for="tipodocumento">Tipo de Documento</label>
+                                <select name="tipodocumento" id="tipodocumento" class="form-control" required="required">
+                                    <option value="">Seleccione...</option>
+                                    <?php foreach ($tipodocumentos as $tipodocumento) :?>
+                                        <option value="<?php echo $tipodocumento->id;?>"><?php echo $tipodocumento->nombre ?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="numero">Numero del Documento:</label>
+                                <input type="text" class="form-control" id="numero" name="numero">
+                            </div>
+                            
                             <div class="form-group">
                                 <label for="telefono">Telefono:</label>
-                                <input type="text" class="form-control" id="telefono" name="telefono" minlength="10" maxlength="10" required>
+                                <input type="text" class="form-control" id="telefono" name="telefono">
                             </div>
                             <div class="form-group">
                                 <label for="direccion">Direccion:</label>
-                                <input type="text" class="form-control" id="direccion" name="direccion" minlength="5" maxlength="25" required>
+                                <input type="text" class="form-control" id="direccion" name="direccion">
                             </div>
-                            <div class="form-group">
-                                <label for="ruc">RUC:</label>
-                                <input type="text" class="form-control" id="ruc" name="ruc"minlength="5" maxlength="10" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="empresa">Empresa:</label>
-                                <input type="text" class="form-control" id="empresa" name="empresa"minlength="5" maxlength="25" required>
-                            </div>
+                            
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-flat">Guardar</button>
                             </div>

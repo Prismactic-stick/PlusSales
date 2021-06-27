@@ -1,6 +1,6 @@
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Version</b> 1.0
+            <b>Version</b> 1.0
             </div>
             <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Plus sale</a>.</strong>
         </footer>
@@ -54,12 +54,12 @@ $(document).ready(function () {
         var cliente = $(this).val(); 
         //alert(cliente);
         var infocliente = cliente.split("*");
-        html = "<p><strong>Nombres:</strong>"+infocliente[1]+"</p>"
-        html += "<p><strong>Apellidos:</strong>"+infocliente[2]+"</p>"
-        html += "<p><strong>Telefono:</strong>"+infocliente[3]+"</p>"
-        html += "<p><strong>Direccion:</strong>"+infocliente[4]+"</p>"
-        html += "<p><strong>RUC:</strong>"+infocliente[5]+"</p>"
-        html += "<p><strong>Empresa:</strong>"+infocliente[6]+"</p>";
+        html = "<p><strong>Nombre:</strong>"+infocliente[1]+"</p>"
+        html += "<p><strong>Tipo de Cliente:</strong>"+infocliente[2]+"</p>"
+        html += "<p><strong>Tipo de Documento:</strong>"+infocliente[3]+"</p>"
+        html += "<p><strong>Numero  de Documento:</strong>"+infocliente[4]+"</p>"
+        html += "<p><strong>Telefono:</strong>"+infocliente[5]+"</p>"
+        html += "<p><strong>Direccion:</strong>"+infocliente[6]+"</p>"
         $("#modal-default .modal-body").html(html);
     });
     $(".btn-view").on("click", function(){

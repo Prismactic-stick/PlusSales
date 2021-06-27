@@ -8,9 +8,9 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Menu</li>
                     <li>
-                        <a href="<?php echo base_url();?>Dashboard/index">
-                            <i class="fa fa-align-justify"></i> <span><big><b>Panel de control</b></big></span>
-                            
+                    <a href="<?php echo base_url();?>Dashboard/index">
+
+                        <i class="fa fa-align-justify"></i> <span><big><b>Panel de control</b></big></span>
                         </a>
                     </li>
                     <li class="treeview">
